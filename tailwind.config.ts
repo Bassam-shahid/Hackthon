@@ -1,6 +1,7 @@
+import { Inter, Poppins } from "next/font/google";
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,11 +9,24 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        letterSpacing:{
+ '          3pct': '3%',
+      },
+      fontFamily:{
+
+        Poppins:[`Poppins`,`sans-serif`],
+        Inter:[`Inter`,`sans-serif`]
+      },
+
+
+
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
   plugins: [],
-} satisfies Config;
+};
+export default config;
